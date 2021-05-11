@@ -1,0 +1,26 @@
+curl_easy_setopt(arg1, 0x2751, iVar1);
+
+curl_easy_setopt(arg1, 0x40, 1);  //CURL SSL OPTION SET TO 0 to bypass ssl verification
+//https://curl.se/libcurl/c/CURLOPT_SSL_VERIFYPEER.html
+//https://curl.se/libcurl/c/CURLOPT_SSL_VERIFYHOST.html
+//https://github.com/curl/curl/blob/master/include/curl/curl.h
+/* Set if we should verify the peer in ssl handshake, set 1 to verify. */
+//CURLOPT(CURLOPT_SSL_VERIFYPEER, CURLOPTTYPE_LONG, 64)
+
+
+curl_easy_setopt(arg1, 0x51, 2);  //CURL SSL OPTION SET TO 0 to bypass ssl verification
+/* Set if we should verify the Common name from the peer certificate in ssl
+   * handshake, set 1 to check existence, 2 to ensure that it matches the
+   * provided hostname. */
+//CURLOPT(CURLOPT_SSL_VERIFYHOST, CURLOPTTYPE_LONG, 81)
+
+curl_easy_setopt(arg1, 0x34, 1);
+//CURLOPT(CURLOPT_FOLLOWLOCATION, CURLOPTTYPE_LONG, 52)
+
+curl_easy_setopt(arg1, 99, 1);
+//CURLOPT(CURLOPT_NOSIGNAL, CURLOPTTYPE_LONG, 99)
+
+curl_easy_setopt(arg1, 0xd, 0x1e);
+//CURLOPT(CURLOPT_TIMEOUT, CURLOPTTYPE_LONG, 13)
+
+uVar2 = curl_easy_perform(arg1);
